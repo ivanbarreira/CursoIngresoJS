@@ -20,7 +20,7 @@ function Sumar ()
 
 	Suma=PrimerPrecio+SegundoPrecio+TercerPrecio;
 
-	alert(Suma);
+	alert("La suma es "+Suma);
 }
 function Promedio () 
 {
@@ -41,7 +41,7 @@ function Promedio ()
 	Suma=PrimerPrecio+SegundoPrecio+TercerPrecio;
 	Promedio=Suma/3;
 
-	alert(Promedio);
+	alert("El promedio es "+Promedio);
 }
 function PrecioFinal () 
 {
@@ -62,7 +62,7 @@ function PrecioFinal ()
 
 	Suma=PrimerPrecio+SegundoPrecio+TercerPrecio;
 	IVA=21/100;
-	PrecioFinal=suma+IVA;
+	PrecioFinal=Suma+IVA;
 
-	alert(Preciofinal);
+	alert("El precio final es "+PrecioFinal);
 }
