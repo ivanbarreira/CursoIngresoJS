@@ -6,15 +6,15 @@ function mostrarAumento()
 {
 	var Sueldo;
 	var Aumento;
-	var SueldoFinal;
+	var Resultado;
 
 	Sueldo=sueldo.value;
 
 	Sueldo=parseInt(Sueldo);
 
 	Aumento=Sueldo*0.1;
-	SueldoFinal=Sueldo+Aumento;
 
-	resultado.value=SueldoFinal;
-	
+	Resultado=Sueldo+Aumento;
+
+	resultado.value=Resultado;
 }
