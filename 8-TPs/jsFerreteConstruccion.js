@@ -6,13 +6,60 @@ C.	Para hacer un contrapiso de 1m x 1m se necesitan 2 bolsas de cemento y 3 de c
 
 function Rectangulo () 
 {
+	var CantidadAlambre;
+	var LargoTerreno;
+	var AnchoTerreno;
 
+	LargoTerreno=Largo.value;
+	AnchoTerreno=Ancho.value;
+
+	LargoTerreno=parseInt(LargoTerreno);
+	AnchoTerreno=parseInt(AnchoTerreno);
+
+	LargoTerreno=LargoTerreno*2;
+	AnchoTerreno=AnchoTerreno*2;
+
+	CantidadAlambre=LargoTerreno+AnchoTerreno;
+	CantidadAlambre=CantidadAlambre*3;
+
+	alert("La cantidad de alambre necesario es de "+CantidadAlambre);
 }
 function Circulo () 
 {
-	
+	var CantidadAlambre;
+	var RadioTerreno;
+
+	RadioTerreno=Radio.value,
+
+	RadioTerreno=parseInt(RadioTerreno);
+
+	CantidadAlambre=2*RadioTerreno*3.14;
+	CantidadAlambre=CantidadAlambre*3;
+
+	alert("La cantidad de alambre necesario es de "+CantidadAlambre);
 }
 function Materiales () 
 {
-	
+	var AreaTerreno;
+	var LargoTerreno;
+	var AnchoTerreno;
+	var BolsasCemento;
+	var BolsasCal;
+
+	LargoTerreno=Largo.value;
+	AnchoTerreno=Ancho.value;
+	BolsasCemento=2;
+	BolsasCal=3;
+
+	LargoTerreno=parseInt(LargoTerreno);
+	AnchoTerreno=parseInt(AnchoTerreno);
+	BolsasCemento=parseInt(BolsasCemento);
+	BolsasCal=parseInt(BolsasCal);
+
+	AreaTerreno=LargoTerreno*AnchoTerreno;
+
+	BolsasCemento=AreaTerreno*BolsasCemento;
+	BolsasCal=AreaTerreno*BolsasCal;
+
+	alert("La cantidad de bolsas de cemento necesarias son "+BolsasCemento+" y las de cal "+BolsasCal);
 }
