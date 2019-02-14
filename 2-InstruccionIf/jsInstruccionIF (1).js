@@ -6,7 +6,7 @@ function mostrar()
 	Edad=edad.value;
 
 	if(Edad==15){
-		alert("niña bonita")}  
+		alert("niña bonita")};
 
 
 }//FIN DE LA FUNCIÓN
