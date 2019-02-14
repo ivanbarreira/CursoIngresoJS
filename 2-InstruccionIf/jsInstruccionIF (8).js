@@ -8,8 +8,8 @@ function mostrar()
 	EstadoCivil=document.getElementById('estadoCivil').value;
 
 	if(Edad>=18&&EstadoCivil=="Soltero"){
-		alert("Es soltero y no es menor")
-	};
+		alert("Es soltero y no es menor");
+	}
 	
 
 
