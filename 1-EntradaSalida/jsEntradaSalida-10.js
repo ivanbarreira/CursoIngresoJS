@@ -13,6 +13,7 @@ function mostrarAumento()
 	Importe=parseInt(Importe);
 
 	Descuento=Importe*0.25;
+
 	Resultado=Importe-Descuento;
 
 	resultado.value=Resultado;
