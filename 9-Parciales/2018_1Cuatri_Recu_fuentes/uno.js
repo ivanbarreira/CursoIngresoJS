@@ -7,10 +7,10 @@ function mostrar()
 	var Peso2
 	var Suma
 
-	Nombre1=Prompt("Ingresa el nombre de tu primera mascota","escriba aca");
-	Nombre2=Prompt("Ingresa el nombre de tu segunda mascota","escribi aca");
-	Peso1=Prompt("Ingresa el peso de "+Nombre1+" en kilos","escribi aqui");
-	Peso2=Prompt("Ingresa el peso de "+Nombre2+"en kilos","esbribi aca")
+	Nombre1=prompt("Ingresa el nombre de tu primera mascota","escriba aca");
+	Nombre2=prompt("Ingresa el nombre de tu segunda mascota","escribi aca");
+	Peso1=prompt("Ingresa el peso de la primera mascota en kilos","escribi aqui");
+	Peso2=prompt("Ingresa el peso de la segunda masscota en kilos","esbribi aca")
 
 	Peso1=parseInt(Peso1);
 	Peso2=parseInt(Peso2);
