@@ -1,19 +1,24 @@
 function mostrar()
 {
- var Precio;
- var Porcentaje;
- var Descuento;
- var Preciofinal;
+ var Amigos;
+ var Total;
+ var Propina;
+ var iva;
+ var CadaUno;
+ var TotalFinal;
 
- Precio=prompt("Ingrese el precio","escriba aqui");
- Porcentaje=prompt("Ingrese el porcentaje de descuento","escriba solo el numero del porcentaje aqui");
+ Amigos=prompt("Ingrese la cantidad de amigos","escriba aqui");
+ Total=prompt("Ingrese el total a pagar","escriba aqui");
 
- Precio=parseInt(Precio);
- Porcentaje=parseInt(Porcentaje);
+ Amigos=parseInt(Amigos);
+ Total=parseInt(Total);
 
- Porcentaje=Porcentaje/100;
- Descuento=Precio*Porcentaje;
- Preciofinal=Precio-Descuento;
+ Propina=Total*0.1;
+ iva=Total*0.21;
 
- elPrecioFinal.value=(Preciofinal);
+ TotalFinal=Total+Propina+iva;
+
+ CadaUno=TotalFinal/Amigos;
+
+ alert("En el grupo son "+Amigos+" amigos y deben pagar $"+Total+" entre todos, a eso hay que agregarle una propina del 10% ($"+Propina+") tambien el IVA ($"+iva+") por lo cual deben pagar un total de $"+TotalFinal+" asi que deben pagar $"+CadaUno+" cada uno");
 }
