@@ -15,7 +15,8 @@ function CalcularPrecio ()
  	var marca;
  	var descuento;
  	var recarga;
-
+ 	var precioBruto;
+ 	var precioDescontado;
 
  	precio=35;
  	cantidad=document.getElementById('Cantidad').value;
@@ -24,24 +25,24 @@ function CalcularPrecio ()
  	cantidad=parseInt(cantidad);
  	marca=parseInt(marca);
 
-	ingresoBruto= cantidad*precio;
+	precioBruto= cantidad*precio;
  	
  	if(cantidad>5)
  	{
- 		descuento=precio*0.5;
- 		precio=precio-descuento;
+ 		descuento=precioBruto*0.5;
+ 		precioDescontado=precioBruto-descuento;
  	}else
  	{
- 		eif(cantidad==5)
+ 		if(cantidad==5)
  		{
  			if(marca=="ArgentinaLuz")
  			{
- 				dscuento=precio*0.4;
- 				precio=precio-descuento;
+ 				dscuento=precioBruto*0.4;
+ 				precioDescontado=precioBruto-descuento;
  			}else
  			{
- 				descuento=precio*0.3;
- 				precio=precio-descuento;
+ 				descuento=precioBruto*0.3;
+ 				precioDescontado=precioBruto-descuento;
  			}
  		}else
  		{
@@ -49,42 +50,44 @@ function CalcularPrecio ()
  			{
  				if(marca=="ArgentinaLuz" || "FelipeLamparas")
  				{
- 					descuento=precio*0.25;
- 					precio=precio-descuento;
+ 					descuento=precioBruto*0.25;
+ 					precioDescontado=precioBruto-descuento;
  				}else
  				{
- 					descuento=precio*20;
- 					precio=precio-descuento;
+ 					descuento=precioBruto*20;
+ 					precioDescontado=precioBruto-descuento;
  				}
- 			}
- 		}else
- 		{
- 			if(cantidad==3)
+ 			}else
+ 			{
+ 				if(cantidad==3)
  			{
  				if(marca=="ArgentinaLuz")
  				{
- 					descuento=precio*0.15;
- 					precio=precio-descuento;
+ 					descuento=precioBruto*0.15;
+ 					precioDescontado=precioBruto-descuento;
  				}else
  				{
  					if(marca=="FelipeLamparas")
  					{
- 						descuento=precio*0.1;
- 					precio=precio-descuento;
+ 						descuento=precioBruto*0.1;
+ 						precioDescontadoo=precioBruto-descuento;
  					}else
  					{
- 						descuento=precio*0.05;
- 					precio=precio-descuento;
+ 						descuento=precioBruto*0.05;
+ 						precioDescontado=precioBruto-descuento;
  					}
  				}
+ 			}
  			}
  		}
 
  	}
- 	if(precio>120)
+ 	document.getElementById('precioDescuento').value="$"+precioDescontado;
+ 	if(precioDescontado>120)
  	{
- 		recarga=ingresoBruto*0.1;
- 		
- 	}
+ 		recarga=precioBruto*0.1;
+ 		precio=precioDescontado+recarga;
+ 		alert("Usted pago $"+precio+" de $"+precioBruto);
+	}
 
 }
