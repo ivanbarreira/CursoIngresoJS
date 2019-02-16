@@ -5,7 +5,8 @@ function mostrar()
 
  Edad=document.getElementById('edad').value;
 
- if(Edad<13){
+ if(Edad<13)
+ {
  	alert("Usted no es adolescente");
  }
 
