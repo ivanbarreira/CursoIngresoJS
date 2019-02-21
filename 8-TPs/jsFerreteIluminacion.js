@@ -49,7 +49,7 @@ function CalcularPrecio ()
  		{
  			if(cantidad==4)
  			{
- 				if(marca=="ArgentinaLuz" || "FelipeLamparas")
+ 				if(marca=="ArgentinaLuz" || marca=="FelipeLamparas")
  				{
  					descuento=precioBruto*0.25;
  				}
@@ -86,7 +86,7 @@ function CalcularPrecio ()
  	precioDescontado=precioBruto-descuento;
 
  	document.getElementById('precioDescuento').value="$"+precioDescontado;
- 	
+
  	if(precioDescontado>120)
  	{
  		recarga=precioBruto*0.1;
