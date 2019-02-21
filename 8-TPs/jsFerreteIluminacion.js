@@ -21,6 +21,7 @@ function CalcularPrecio ()
  	precio=35;
  	cantidad=document.getElementById('Cantidad').value;
  	marca=document.getElementById('Marca').value;
+ 	descuento=0
 
  	cantidad=parseInt(cantidad);
  	marca=parseInt(marca);
@@ -30,51 +31,50 @@ function CalcularPrecio ()
  	if(cantidad>5)
  	{
  		descuento=precioBruto*0.5;
- 		precioDescontado=precioBruto-descuento;
- 	}else
+ 	}
+ 	else
  	{
  		if(cantidad==5)
  		{
  			if(marca=="ArgentinaLuz")
  			{
- 				dscuento=precioBruto*0.4;
- 				precioDescontado=precioBruto-descuento;
- 			}else
+ 				descuento=precioBruto*0.4;
+ 			}
+ 			else
  			{
  				descuento=precioBruto*0.3;
- 				precioDescontado=precioBruto-descuento;
  			}
- 		}else
+ 		}
+ 		else
  		{
  			if(cantidad==4)
  			{
  				if(marca=="ArgentinaLuz" || "FelipeLamparas")
  				{
  					descuento=precioBruto*0.25;
- 					precioDescontado=precioBruto-descuento;
- 				}else
- 				{
- 					descuento=precioBruto*20;
- 					precioDescontado=precioBruto-descuento;
  				}
- 			}else
+ 				else
+ 				{
+ 					descuento=precioBruto*0.2;
+ 				}
+ 			}
+ 			else
  			{
  				if(cantidad==3)
  			{
  				if(marca=="ArgentinaLuz")
  				{
  					descuento=precioBruto*0.15;
- 					precioDescontado=precioBruto-descuento;
- 				}else
+ 				}
+ 				else
  				{
  					if(marca=="FelipeLamparas")
  					{
  						descuento=precioBruto*0.1;
- 						precioDescontadoo=precioBruto-descuento;
- 					}else
+ 					}
+ 					else
  					{
  						descuento=precioBruto*0.05;
- 						precioDescontado=precioBruto-descuento;
  					}
  				}
  			}
@@ -82,7 +82,11 @@ function CalcularPrecio ()
  		}
 
  	}
+
+ 	precioDescontado=precioBruto-descuento;
+
  	document.getElementById('precioDescuento').value="$"+precioDescontado;
+ 	
  	if(precioDescontado>120)
  	{
  		recarga=precioBruto*0.1;
