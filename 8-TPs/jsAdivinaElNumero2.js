@@ -38,7 +38,7 @@ function verificar()
 
 	if(numeroIngresado==numeroSecreto)
 	{
-		if(contadorIntentos>6)
+		if(contadorIntentos>5)
 		{
 			mensaje="falta técnica";
 		}
@@ -51,34 +51,37 @@ function verificar()
 			else
 			{
 				if(contadorIntentos==2)
+				{
+					mensaje="excelente percepción";
+				}
+				else
+				{
+					if(contadorIntentos==3)
 					{
-						mensaje="excelente percepción";
+						mensaje="Esto es suerte";
 					}
 					else
 					{
-						if(contadorIntentos==3)
+						if(contadorIntentos==4)
 						{
-							mensaje="Esto es suerte";
+							mensaje="Excelente técnica";
 						}
 						else
 						{
-							if(contadorIntentos==4)
+							if(contadorIntentos==5)
 							{
-								mensaje="Excelente técnica";
+								mensaje="usted está en la media";
 							}
 							else
 							{
-								if(contadorIntentos==5)
-								{
-									mensaje="usted está en la media";
-								}
-								else
+								if(contadorIntentos>10)
 								{
 									mensaje="afortunado en el amor";
 								}
-
-						}	}
-				}	}		
+							}	
+						}	
+					}
+				}		
 			}
 		}
 	}
@@ -97,5 +100,4 @@ function verificar()
 	intentos.value=contadorIntentos;
 	
 	alert(mensaje);
-
 }
