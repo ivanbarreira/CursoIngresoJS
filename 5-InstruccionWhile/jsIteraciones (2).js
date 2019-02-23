@@ -1,12 +1,11 @@
 function mostrar()
 {
 	var Numero;
-	Numero=0
+	Numero=10
 
-	while(Numero<11)
+	while(Numero>0)
 	{
-		Numero=Numero+11
-		console.log(--Numero);
+		console.log(Numero--);
 	}
 
 
