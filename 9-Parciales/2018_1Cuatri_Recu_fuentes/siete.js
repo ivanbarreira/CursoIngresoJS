@@ -36,9 +36,8 @@ function mostrar()
 			}
 		}
 
-
-
 		TipoDeCombustible = prompt("Ingrese el tipo de combustible","escriba `s´ o `l´");
+
 
 		while(TipoDeCombustible != "s" && TipoDeCombustible != "l")
 		{
@@ -52,8 +51,22 @@ function mostrar()
 			}
 		}
 
+		if(TipoDeCombustible=="s")
+		{
+			TipoDeCombustible="solido";
+		}
+		else
+		{
+			if(TipoDeCombustible=="l")
+			{
+				TipoDeCombustible="liquido";
+			}
+		}
+
 
 		sumavelocidad=sumavelocidad+velocidad;
+
+
 
 
 		if(vehiculos==0)
@@ -62,12 +75,19 @@ function mostrar()
 			velocidadMax=velocidad;
 		}
 
+
 		if(velocidad<velocidadMin)
 		{
 			velocidadMin=velocidad;
 			TipoDeCombustibleMin=TipoDeCombustible;
 		}
-
+		else
+		{	
+			if(velocidad==velocidadMin)
+			{
+				TipoDeCombustibleMin=TipoDeCombustible;
+			}
+		}
 
 
 		switch (TipoDeCombustible)
@@ -80,15 +100,13 @@ function mostrar()
 			break;
 
 			case "s":
-
-				if(velocidad>velocidadMax)
-				{
-					velocidadMax=velocidad;
-				}
+			if(velocidad>velocidadMax)
+			{
+				velocidadMax=velocidad;
+			}
 			break;
 		}
 		
-
 		vehiculos++;
 	}
 
@@ -96,7 +114,7 @@ function mostrar()
 	Promediovelocidad=sumavelocidad/vehiculos;
 
 
-	alert("El promedio total es de las velocidades es "+Promediovelocidad+" kilometros , la velocidad mas baja es "+velocidadMin+" kilometros y su tipo de comustible es "+TipoDeCombustibleMin+", la cantidad de combustible liquido que su velocidad supere los 100 kilometros es de "+contadorCombustible+" y la valocidad mas alta de los vehiculos con combustible solido es "+velocidadMax+" kilometros");
+	alert("El promedio total de las velocidades es "+Promediovelocidad+" KM, la velocidad mas baja es "+velocidadMin+" KM y su tipo de combustible es "+TipoDeCombustibleMin+", la cantidad de combustible liquido que su velocidad supere los 100 KM es de "+contadorCombustible+" y la velocidad mas alta de los vehiculos con combustible solido es de "+velocidadMax+" KM");
 
 
 
