@@ -8,7 +8,8 @@ function mostrar()
 	var Promediovelocidad;
 	var sumavelocidad;
 	var velocidadMin;
-	var 
+	var velocidadMax;
+	var TipoDeCombustibleMin;
 
 	contadorvelocidad = 0;
 	contadorCombustible = 0;
@@ -19,7 +20,7 @@ function mostrar()
 
 	while (vehiculos<5)
 	{
-		velocidad = prompt ("ingrese la velocidad en kilometros","esciba entre 0 y 250");
+		velocidad = prompt ("Ingrese la velocidad en kilometros","esciba entre 0 y 250");
 		velocidad = parseInt(velocidad);
 
 		while(velocidad<0 || velocidad>250)
@@ -35,7 +36,9 @@ function mostrar()
 			}
 		}
 
-		TipoDeCombustible = prompt("ingrese el tipo de combustible","escriba `s´ o `l´");
+
+
+		TipoDeCombustible = prompt("Ingrese el tipo de combustible","escriba `s´ o `l´");
 
 		while(TipoDeCombustible != "s" && TipoDeCombustible != "l")
 		{
@@ -49,33 +52,56 @@ function mostrar()
 			}
 		}
 
+
 		sumavelocidad=sumavelocidad+velocidad;
 
 
 		if(vehiculos==0)
 		{
 			velocidadMin=velocidad;
+			velocidadMax=velocidad;
 		}
+
 		if(velocidad<velocidadMin)
 		{
 			velocidadMin=velocidad;
+			TipoDeCombustibleMin=TipoDeCombustible;
 		}
 
-		if(TipoDeCombustible=="l" && velocidad>100)
+
+
+		switch (TipoDeCombustible)
 		{
-			contadorCombustible++;
+			case  "l":
+				if (velocidad>100)
+				{
+					contadorCombustible++;
+				}
+			break;
+
+			case "s":
+
+				if(velocidad>velocidadMax)
+				{
+					velocidadMax=velocidad;
+				}
+			break;
 		}
-
-
-
-
-
+		
 
 		vehiculos++;
 	}
+
+
 	Promediovelocidad=sumavelocidad/vehiculos;
-	console.log("promedio "+ Promediovelocidad);
+
+
+	alert("El promedio total es de las velocidades es "+Promediovelocidad+" kilometros , la velocidad mas baja es "+velocidadMin+" kilometros y su tipo de comustible es "+TipoDeCombustibleMin+", la cantidad de combustible liquido que su velocidad supere los 100 kilometros es de "+contadorCombustible+" y la valocidad mas alta de los vehiculos con combustible solido es "+velocidadMax+" kilometros");
+
+
+
+	/*console.log("promedio "+ Promediovelocidad);
 	console.log("velocidad minima: "+velocidadMin);
 	console.log("cuantos mayor a 100 " + contadorCombustible);
-	
+	*/
 }
